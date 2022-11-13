@@ -15,7 +15,13 @@ let part_left =document.querySelector('.part-left');
 let part_right =document.querySelector('.part-right');
 let part_father =document.querySelector('.part-father');
 let footer_container=document.querySelector('.footer-container');
+let lesiner =0;
 var i = 0;                
+
+
+slider_container.style.width=(slideimge.length*66) +"%"
+   
+
 
 function slidere() {         
   setTimeout(function() {   
@@ -44,6 +50,10 @@ function slidere() {
     }  
        }
 
+       if(window.innerHeight<1000){
+         mobil();
+       }
+
     i++;                    
     if (i <  (slideimge.length +1)) {           
         slidere();           
@@ -56,7 +66,13 @@ slidere();
 
 
 function mobil() {
+if (lesiner==1 &&window.innerWidth>1000) {
+   location.reload()
+   lesiner=0;
+}
+
   if(window.innerWidth<1000) {
+   lesiner=1;
     console.log("dsfs")
     span_container.forEach(function (params) {
        params.style.fontSize='10px';
