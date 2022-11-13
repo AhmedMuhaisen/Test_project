@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.Poppins-font{
+font-family:Poppins;
+}
+
+.DM-Sans-font{
+font-family:DM Sans;
+}
+
+.font-size-12{
+    font-size:12px ;
+}
+
+.font-size-8{
+    font-size:8px ;
+}
+.color-primary{
+    color:#554AF0 ;
+}
+
+/* header */
+header{
+    background: #554AF0;
+    color:#fff ;
+}
+
+header li a {
+
+    font-size:19px;
+     font-family:Roboto;
+      margin: 0px 5px ;
+       padding:10px ;
+}
+
+/* searsh section1 */
+.searsh-icon{
+    color: rgb(145, 145, 145);
+     position:absolute ;
+      left: 90%;
+       top: 50%;
+     transform: translate(-50%,-50%);
+}
+
+/* section2 */
+.slider-container{
+width:200%;
+ left:-50%;
+ transition: left 0.9s;
+ height: 80vh;
+ }
+ .slider-container div{
+    transition: width 0.5s;
+ }
+
+ /* section 3 */
+.category-container{
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+
+.products-container{
+ font-size: 1.25rem;   
+}
+ footer{
+    background-color: #DBDBDB;
+ }
