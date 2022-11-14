@@ -15,37 +15,43 @@ let part_left =document.querySelector('.part-left');
 let part_right =document.querySelector('.part-right');
 let part_father =document.querySelector('.part-father');
 let footer_container=document.querySelector('.footer-container');
+let lesiner =0;
 var i = 0;                
 
-function slidere() {         
+slider_container.style.width=(slideimge.length*66) +"%"
+
+function slidere() {    
+if(i==0){
+slider_container.style.left='-45%';
+}else{
+   let slift =slider_container.style.left;
+   let shiftminase=(slift.split('%')[0]-66);
+   slider_container.style.left=shiftminase+'%'; 
+}
   setTimeout(function() {   
   
-    if(i==0){
-        slider_container.style.left='10%';
-       
-    }
-    else  if(i==(slideimge.length)){
-        slider_container.style.left='10%';
-         i=0;
-    }
-    else{
-        
-        let slift =slider_container.style.left;
-        let shiftminase=(slift.split('%')[0]-60);
-        slider_container.style.left=shiftminase+'%'; 
-                
-    }
+      
     for(f=0 ;f<slideimge.length ;f++){
-        if (f==i) {
-            slideimge[i].style.width='35%'
-    }
-     else{
-        slideimge[f].style.width='30%'
-    }  
+      slideimge[i+2].style.width='35%'  
+      if(f!=i+2){
+         slideimge[f].style.width='30%'
+      }
+   
        }
 
+          
+   if(i==(slideimge.length-3)){
+      slider_container.innerHTML+=slider_container.innerHTML;
+      slideimge =document.querySelectorAll('.slider-container div');
+      slider_container.style.width=(slideimge.length*66) +"%"
+   
+   
+   } 
+       if(window.innerHeight<1000){
+         mobil();
+       }
     i++;                    
-    if (i <  (slideimge.length +1)) {           
+    if (i <(slideimge.length)) {           
         slidere();           
     }                      
   }, 3000)
@@ -56,7 +62,13 @@ slidere();
 
 
 function mobil() {
+if (lesiner==1 &&window.innerWidth>1000) {
+   location.reload()
+   lesiner=0;
+}
+
   if(window.innerWidth<1000) {
+   lesiner=1;
     console.log("dsfs")
     span_container.forEach(function (params) {
        params.style.fontSize='10px';
