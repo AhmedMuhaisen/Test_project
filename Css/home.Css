@@ -48,7 +48,7 @@ header li a {
 /* section2 */
 .slider-container{
 width:200%;
- left:-50%;
+left: 50%;
  transition: left 0.9s;
  height: 80vh;
  }
